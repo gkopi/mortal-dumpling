@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" > 
+	<![endif]--> <html class="no-js" lang="en" > 
+	<head> 
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>MD | {{ title }}</title> 
+		
+		<link rel="stylesheet" href="{{ asset('bundles/mortaldumpling/Dumpling_Project/stylesheets/app.css')}}"> 
+	
+		
+		<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css')}}"/>
+		
+		<script src="{{ asset('foundation/js/vendor/modernizr.js')}}"></script> 
+	
+	</head> 
+	<body>
+	
+		<div class="contain-to-grid">
+			
+			  <nav class="top-bar " data-topbar>
+			  {% block nav %}
+			  
+			  <ul class="title-area">
+			  	<li class="name">
+      				<h1><a href="/app_dev.php"><img style="height:30px" src="{{ asset('bundles/mortaldumpling/images/favicon.ico')}}"> Mortal Dumpling</a></h1>
+    			</li>
+			     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			    <li class="toggle-topbar menu-icon"><a href="#"><span>Nav</span></a></li>
+			  </ul>
+			
+			  <section class="top-bar-section">
+			    <ul class="left">
+			      <li class=""><a href="/app_dev.php/events">Events</a></li>
+			      <li class=""><a href="/app_dev.php/whatwemake">What We Make</a></li>
+			      <li class=""><a href="/app_dev.php/about">About</a></li>
+			      <li class=""><a href="/app_dev.php/contact">Contact</a></li>
+			
+			    </ul>
+			  </section>
+			  {% endblock nav %}
+			  </nav>
+		  </div>
+		  
+		  
+		   
+		  <div class="content">
+		 	 <div class="small-12 medium-11 large-9 medium-centered columns" style="background-color:rgba(242,242,255,0.8);">
+		 	 {% block content %}
+		 	    
+			  {% endblock content %}
+		</div>
+		</div>
+		
+		{% block javascripts %}
+		
+		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/bower_components/jquery/dist/jquery.min.js')}}"></script>
+		
+	<!--
+		<script type="text/javascript" src="{{ asset('//code.jquery.com/jquery-1.11.0.min.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('//code.jquery.com/jquery-migrate-1.2.1.min.js')}}"></script>
+	-->
+		<script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
+				
+		
+		<script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider-class').slick({
+            });
+        });
+    	</script> 
+		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/bower_components/foundation/js/foundation.min.js')}}"></script>
+		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/js/app.js')}}"> </script> 
+		
+		
+		{% endblock %}
+	</body> 
+</html>

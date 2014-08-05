@@ -1,0 +1,19 @@
+mortal_dumpling_homepage:
+    pattern:  /
+    defaults: { _controller: MortalDumplingBundle:Dumpling:index,page:'home' }
+
+about_page:
+    pattern:  /about
+    defaults: { _controller: MortalDumplingBundle:Dumpling:about,page:'about' }
+    
+events_page:
+    pattern:  /events
+    defaults: {_controller: MortalDumplingBundle:Dumpling:events,page:'events'}
+  
+contact_page:
+    pattern:  /contact
+    defaults: {_controller: MortalDumplingBundle:Dumpling:contact,page:'contact'}
+    
+whatwemake_page:
+    pattern:  /whatwemake
+    defaults: {_controller: MortalDumplingBundle:Dumpling:whatwemake,page:'food'}

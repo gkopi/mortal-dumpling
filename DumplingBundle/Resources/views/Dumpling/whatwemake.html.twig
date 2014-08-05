@@ -1,0 +1,28 @@
+ {% extends 'MortalDumplingBundle::base.html.twig' %}
+{% block content %}
+	{{parent()}} 
+	<ul class="small-block-grid-1 medium-block-grid-2">
+		<li class="small-12 medium-6 columns">
+			<div class="text content-block">
+				<div class="small-11 small-centered columns text-center">
+					<h3>Some Sample Menus From Events</h3>
+					<br>
+					<p><a href='#'>Mortal Dumpling Monday Menu (1/2/34)</a></p>
+					<p><a href='#'>Popup Thursday Menu (6/4/21)</a></p>
+				</div>
+			</div>
+		</li>
+		<li class="small-12 medium-6 columns">
+			<div class="text content-block">
+				<div class="small-11 small-centered columns text-center">
+					<h2><strong>Bulk Order</strong></h3>
+					<p>This little known option could be your best friend. We offer a special menu (most of the stuff that's easy for us to make in bulk) for special order, available for pickup at our Monday events. Check out the menu below, and shoot us an email with your order.</p>
+					<a href="#">Bulk Order Menu</a>
+				</div>
+			</div>
+		</li>
+		<li class="small-12 medium-6 columns">
+			<img src="{{asset('bundles/mortaldumpling/images/MDMondays.jpg')}}">
+		</li>
+	</ul>	
+{% endblock content%}

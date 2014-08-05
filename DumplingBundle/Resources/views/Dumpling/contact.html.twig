@@ -1,0 +1,21 @@
+ {% extends 'MortalDumplingBundle::base.html.twig' %}
+{% block content %}
+	{{parent()}} 
+	<ul class="small-block-grid-1 medium-block-grid-2">
+		<li class="small-12 medium-6 columns">
+			<div class="text content-block">
+				<div class="small-11 small-centered columns text-center">
+					<h2><strong>Are You A Mortal Dumpling?</strong></h3>
+					<br>
+					<h4> Neither are we - but we know some, and can put you in touch. </h4>
+					<br><br>
+					<p> Email us at: mortaldumpling@gmail.com </p>
+					<p> Like us on <a href="#">facebook</a>, and follow us on <a href="#">twitter</a> - @mortaldumpling.
+				</div>
+			</div>
+		</li>
+		<li class="small-12 medium-6 columns">
+			{{ include('MortalDumplingBundle:Dumpling:MailChimpSignupForm.html.twig') }}
+		</li>
+	</ul>	
+{% endblock content%}
