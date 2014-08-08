@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Mortal\DumplingBundle\ContentBlock\HomeContent;
 use Mortal\DumplingBundle\ContentBlock\AboutContent;
 use Mortal\DumplingBundle\ContentBlock\EventContent;
+use Mortal\DumplingBundle\ContentBlock\ContactContent;
+use Mortal\DumplingBundle\ContentBlock\WhatWeMakeContent;
 use Mortal\DumplingBundle\Entity\Email;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,10 +30,12 @@ class DumplingController extends Controller {
 	}
 
 	public function contactAction($page) {
-		return $this -> render('MortalDumplingBundle:Dumpling:contact.html.twig', array('title' => $page));
+		$content = new ContactContent();
+		return $this -> render('MortalDumplingBundle:Dumpling:contact.html.twig', array('title' => $page,'content' => $content));
 	}
 
 	public function whatwemakeAction($page) {
-		return $this -> render('MortalDumplingBundle:Dumpling:whatwemake.html.twig', array('title' => $page));
+		$content = new WhatWeMakeContent();
+		return $this -> render('MortalDumplingBundle:Dumpling:whatwemake.html.twig', array('title' => $page,'content' => $content));
 	}
 }

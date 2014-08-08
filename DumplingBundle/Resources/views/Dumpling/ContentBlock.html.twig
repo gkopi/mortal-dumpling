@@ -1,6 +1,6 @@
 {% if content_block.type == 'Image' %}
 		<div class="item small-12 medium-6 columns">
-			<img class="content-block" style="" src="{{ asset(content_block.url) }}" alt="Symfony!" />
+			<img class="" style="" src="{{ asset(content_block.url) }}" alt="Symfony!" />
 		</div>
 		            		
 {% elseif content_block.type == 'Event' %}
@@ -23,7 +23,7 @@
 					<p><h3>{{content_block.title}}</h3></p>
 				{% endif %}
 				{% for paragraph in content_block.paragraphs_array %}
-					<p class="event-description text-justify">{{paragraph | raw}}</p>
+					<p class="text-justify">{{paragraph | raw}}</p>
 				{% endfor %}
 			</div>
 		</div>

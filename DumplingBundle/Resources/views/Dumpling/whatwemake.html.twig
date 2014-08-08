@@ -3,39 +3,19 @@
 	{{parent()}} 
 	<div id="container" class="js-isotope"
   data-isotope-options='{ "itemSelector": ".item" }'>
-		<div class="item small-12 medium-6 columns">
-			<div class="text content-block">
-				<div class="small-11 small-centered columns text-center">
-					<h3>Some Sample Menus From Events</h3>
-					<br>
-					<p><a href='#'>Mortal Dumpling Monday Menu (1/2/34)</a></p>
-					<p><a href='#'>Popup Thursday Menu (6/4/21)</a></p>
-				</div>
-			</div>
-		</div>
-		<div class="content-block small-12 medium-6 columns">
-		   <div >
-			<img class="item" style="width:100%;" src="{{asset('bundles/mortaldumpling/images/MDMondays.jpg')}}">
-		</div>
-		</div>
-		<div class="item small-12 medium-6 columns">
-			<div class="text content-block">
-				<div class="small-11 small-centered columns text-center">
-					<h2><strong>Bulk Order</strong></h3>
-					<p>This little known option could be your best friend. We offer a special menu (most of the stuff that's easy for us to make in bulk) for special order, available for pickup at our Monday events. Check out the menu below, and shoot us an email with your order.</p>
-					<a href="#">Bulk Order Menu</a>
-				</div>
-			</div>
-		</div>
+		{% for content_block in content.content_blocks %}
+		    {{ include('MortalDumplingBundle:Dumpling:ContentBlock.html.twig') }}
+		{% endfor %}
 		
 	</div>	
 {% endblock content%}
 {% block javascripts %}
   {{ parent() }}
-  
+   <script>
   	var container = document.querySelector('#container');
 	var msnry;
 	imagesLoaded( container, function() {
 	  msnry = new Masonry( container );
 	});
+	</script>
 {% endblock %}

@@ -15,6 +15,7 @@
 		<script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
     	<script src="{{ asset('http://isotope.metafizzy.co/isotope.pkgd.min.js')}}"> </script>
 		<script src="{{ asset('foundation/js/vendor/modernizr.js')}}"></script> 
+		<script src="{{ asset('http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js')}}"></script> 
 		
 		
 		<style>
@@ -109,12 +110,17 @@
             });
         });
         
-        
     	</script> 
 		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/bower_components/foundation/js/foundation.min.js')}}"></script>
 		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/js/app.js')}}"> </script> 
 		
-		
+	   <script>
+		  	var container = document.querySelector('#container');
+			var msnry;
+			imagesLoaded( container, function() {
+			  msnry = new Masonry( container );
+			});
+		</script>
 		{% endblock %}
 		
 		
