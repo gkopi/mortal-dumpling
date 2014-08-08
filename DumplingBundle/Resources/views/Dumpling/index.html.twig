@@ -3,7 +3,7 @@
  {% block content %}
  	<ul class="small-block-grid-1 medium-block-grid-2">
 		{% block slider %}
-			<li class="small-11 small-centered columns" style="margin-bottom:-27px">
+			<li class="small-11 small-centered columns">
 				<div class="content-block slider-class" style="padding-bottom:0px">
 					<div> <img src="{{ asset('bundles/mortaldumpling/images/puer1.jpg')}}"></div>
 				    <div><img src="{{ asset('bundles/mortaldumpling/images/table1.jpg')}}"></div>
@@ -12,17 +12,18 @@
 			</li>
 		{% endblock %}
 	</ul>
-	<ul class="small-block-grid-1 medium-block-grid-2">
-			{% block content_blocks %} 
-		            	
-		            	{% for content_block in content.content_blocks %}
-		            		{{ include('MortalDumplingBundle:Dumpling:ContentBlock.html.twig') }}
-		            	{% endfor %}
-		            	<li class="small-12 medium-6 columns">
-		            		{{ include('MortalDumplingBundle:Dumpling:MailChimpSignupForm.html.twig') }}
-		            	</li>
+	<div id="container" class="js-isotope"
+  data-isotope-options='{ "itemSelector": ".item" }'>
+		{% block content_blocks %} 
+			{% for content_block in content.content_blocks %}
+		    	{{ include('MortalDumplingBundle:Dumpling:ContentBlock.html.twig') }}
+		    {% endfor %}
+		    <div class="item small-12 medium-6 columns">
+		    	
+		    	{{ include('MortalDumplingBundle:Dumpling:MailChimpSignupForm.html.twig') }}
+		    </div>
 		{% endblock content_blocks %}
-	</ul>
+	</div>
  {% endblock content %}
  		 	 
  

@@ -1,10 +1,10 @@
 {% if content_block.type == 'Image' %}
-	<li >
-		<img class="content-block" style="width:100%" src="{{ asset(content_block.url) }}" alt="Symfony!" />
-	</li>
+		<div class="item small-12 medium-6 columns">
+			<img class="content-block" style="" src="{{ asset(content_block.url) }}" alt="Symfony!" />
+		</div>
 		            		
 {% elseif content_block.type == 'Event' %}
-	<li class="small-12 medium-6 columns">
+	<div class="item small-12 medium-6 columns">
 		<div class="text content-block">
 			<div class="small-11 small-centered columns text-center">
 				<h3 class="event-name"> {{content_block.name}} </h3>
@@ -13,10 +13,10 @@
 				<p class="event-description text-justify">{{content_block.what}}</p>
 			</div>
 		</div>
-	</li>
+	</div>
 
 {% elseif content_block.type == 'Text' %}
-	<li class="small-12 medium-6 columns">
+	<div class="item small-12 medium-6 columns">
 		<div class="text content-block">
 			<div class="small-11 small-centered columns text-center">
 				{% if content_block.title != '' %}
@@ -27,5 +27,5 @@
 				{% endfor %}
 			</div>
 		</div>
-	</li>
+	</div>
 {% endif %}

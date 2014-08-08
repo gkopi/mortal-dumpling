@@ -6,13 +6,52 @@
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>MD | {{ title }}</title> 
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('bundles/mortaldumpling/Dumpling_Project/stylesheets/app.css')}}"> 
+			<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css')}}"/>
+		{% endblock stylesheets %}
+
 		
-		<link rel="stylesheet" href="{{ asset('bundles/mortaldumpling/Dumpling_Project/stylesheets/app.css')}}"> 
-	
-		
-		<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css')}}"/>
-		
+		<script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
+    	<script src="{{ asset('http://isotope.metafizzy.co/isotope.pkgd.min.js')}}"> </script>
 		<script src="{{ asset('foundation/js/vendor/modernizr.js')}}"></script> 
+		
+		
+		<style>
+		{% block style %}
+				* {
+			  -webkit-box-sizing: border-box;
+			     -moz-box-sizing: border-box;
+			          box-sizing: border-box;
+					}
+					
+					body {
+					  font-family: sans-serif;
+					}
+					
+					
+					/* ---- isotope ---- */
+					
+					#container {
+					  max-width: 1200px;
+					}
+					
+					/* clear fix */
+					#container:after {
+					  content: '';
+					  display: block;
+					  clear: both;
+					}
+					
+					/* ---- .item ---- */
+					
+					.item {
+					  float: left;
+					}
+					
+		{% endblock style %}
+		</style>
+
 	
 	</head> 
 	<body>
@@ -27,7 +66,7 @@
       				<h1><a href="/app_dev.php"><img style="height:30px" src="{{ asset('bundles/mortaldumpling/images/favicon.ico')}}"> Mortal Dumpling</a></h1>
     			</li>
 			     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-			    <li class="toggle-topbar menu-icon"><a href="#"><span>Nav</span></a></li>
+			    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			  </ul>
 			
 			  <section class="top-bar-section">
@@ -46,7 +85,7 @@
 		  
 		   
 		  <div class="content">
-		 	 <div class="small-12 medium-11 large-9 medium-centered columns" style="background-color:rgba(242,242,255,0.8);">
+		 	 <div class="transparent small-12 medium-11 large-9 medium-centered columns" style="">
 		 	 {% block content %}
 		 	    
 			  {% endblock content %}
@@ -69,11 +108,15 @@
             $('.slider-class').slick({
             });
         });
+        
+        
     	</script> 
 		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/bower_components/foundation/js/foundation.min.js')}}"></script>
 		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/js/app.js')}}"> </script> 
 		
 		
 		{% endblock %}
+		
+		
 	</body> 
 </html>
