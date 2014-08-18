@@ -5,53 +5,23 @@
 	<head> 
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="description" content="Santa Cruz, CA, based dumpling and bao maker, currently offering bulk order pick-up of fresh and frozen items, as well as regular full-menu events.">
 		<title>MD | {{ title }}</title> 
 		{% block stylesheets %}
+			<link rel="shortcut icon" href="{{ asset('bundles/mortaldumpling/images/favicon.ico') }}" />
+		
 			<link rel="stylesheet" href="{{ asset('bundles/mortaldumpling/Dumpling_Project/stylesheets/app.css')}}"> 
 			<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css')}}"/>
 		{% endblock stylesheets %}
-
-		
-		<script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script>
-    	<script src="{{ asset('http://isotope.metafizzy.co/isotope.pkgd.min.js')}}"> </script>
-		<script src="{{ asset('foundation/js/vendor/modernizr.js')}}"></script> 
-		<script src="{{ asset('http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js')}}"></script> 
-		
 		
 		<style>
 		{% block style %}
-				* {
-			  -webkit-box-sizing: border-box;
-			     -moz-box-sizing: border-box;
-			          box-sizing: border-box;
-					}
-					
-					body {
-					  font-family: sans-serif;
-					}
-					
-					
-					/* ---- isotope ---- */
-					
-					#container {
-					  max-width: 1200px;
-					}
-					
-					/* clear fix */
-					#container:after {
-					  content: '';
-					  display: block;
-					  clear: both;
-					}
-					
-					/* ---- .item ---- */
-					
-					.item {
-					  float: left;
-					}
-					
-		{% endblock style %}
+		
+		{% endblock %}
 		</style>
+    	<script src="{{ asset('http://isotope.metafizzy.co/isotope.pkgd.min.js')}}"> </script>
+		<script src="{{ asset('foundation/js/vendor/modernizr.js')}}"></script> 
+		<script src="{{ asset('http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js')}}"></script> 
 
 	
 	</head> 
@@ -64,7 +34,7 @@
 			  
 			  <ul class="title-area">
 			  	<li class="name">
-      				<h1><a href="/app_dev.php"><img style="height:30px" src="{{ asset('bundles/mortaldumpling/images/favicon.ico')}}"> Mortal Dumpling</a></h1>
+      				<h1><a href="/app_dev.php"><img style="height:30px;" src="{{ asset('bundles/mortaldumpling/images/favicon.ico')}}"> Mortal Dumpling</a></h1>
     			</li>
 			     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 			    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -96,17 +66,15 @@
 		{% block javascripts %}
 		
 		<script src="{{ asset('bundles/mortaldumpling/Dumpling_Project/bower_components/jquery/dist/jquery.min.js')}}"></script>
-		
-	<!--
-		<script type="text/javascript" src="{{ asset('//code.jquery.com/jquery-1.11.0.min.js')}}"></script>
-		<script type="text/javascript" src="{{ asset('//code.jquery.com/jquery-migrate-1.2.1.min.js')}}"></script>
-	-->
 		<script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
-				
 		
 		<script type="text/javascript">
         $(document).ready(function(){
             $('.slider-class').slick({
+            	dots:true,
+            	arrows:false,
+            	autoplay: true,
+  				autoplaySpeed: 10000,
             });
         });
         
@@ -122,7 +90,6 @@
 			});
 		</script>
 		{% endblock %}
-		
 		
 	</body> 
 </html>

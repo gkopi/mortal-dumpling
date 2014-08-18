@@ -1,6 +1,6 @@
 {% if content_block.type == 'Image' %}
 		<div class="item small-12 medium-6 columns">
-			<img class="" style="" src="{{ asset(content_block.url) }}" alt="Symfony!" />
+			<img class="" style="" src="{{ asset(content_block.url) }}" alt="{{content_block.name}}" />
 		</div>
 		            		
 {% elseif content_block.type == 'Event' %}
@@ -10,7 +10,7 @@
 				<h3 class="event-name"> {{content_block.name}} </h3>
 				<p class="event-date"> {{content_block.when}} </p>
 				<p class="event-location"> {{content_block.where}} </p>
-				<p class="event-description text-justify">{{content_block.what}}</p>
+				<p class="event-description text-justify">{{content_block.what | raw}}</p>
 			</div>
 		</div>
 	</div>

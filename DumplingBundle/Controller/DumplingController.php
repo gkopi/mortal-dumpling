@@ -3,11 +3,11 @@
 namespace Mortal\DumplingBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Mortal\DumplingBundle\ContentBlock\HomeContent;
-use Mortal\DumplingBundle\ContentBlock\AboutContent;
-use Mortal\DumplingBundle\ContentBlock\EventContent;
-use Mortal\DumplingBundle\ContentBlock\ContactContent;
-use Mortal\DumplingBundle\ContentBlock\WhatWeMakeContent;
+use Mortal\DumplingBundle\PageContent\HomeContent;
+use Mortal\DumplingBundle\PageContent\AboutContent;
+use Mortal\DumplingBundle\PageContent\EventContent;
+use Mortal\DumplingBundle\PageContent\ContactContent;
+use Mortal\DumplingBundle\PageContent\WhatWeMakeContent;
 use Mortal\DumplingBundle\Entity\Email;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
